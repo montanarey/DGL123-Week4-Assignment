@@ -25,26 +25,29 @@
     </form>
 
 
-    <?php // Script to handle user data and print calculation result
-    print "<h3>Result:</h3>";
-
-    // Recieve data from user and store in variables
-    //$firstNum = $_POST['firstNum'];
-    //$secondNum = $_POST['secondNum'];
-    
-    // If both inputs are numeric
+    <?php 
+    // Only proceed with script below if the form has been filled in
     if (isset($_POST['firstNum']) && isset($_POST['secondNum'])) {
+
+        // Print header
+        print "<h3>Result:</h3>";
+
         // Recieve data from user and store in variables
         $firstNum = $_POST['firstNum'];
         $secondNum = $_POST['secondNum'];
-        // Calculate the sum of the first and second number
-        $sum = $firstNum + $secondNum;
-        // Print the sum
-        print "<p>$firstNum + $secondNum = $sum</p>";
-    } else {
+    
+        // Error handling for non-numeric values
+        if (is_set($firstNum) && is_set($secondNum)) {
+            
+            // Calculate the sum of the first and second number
+            $sum = $firstNum + $secondNum;
+            
+            // Print the sum
+            print "<p>$firstNum + $secondNum = $sum</p>";
+        } else {
         print "Incorrect input. Please enter valid numbers and try again.";
+        }
     }
-
     ?>
 
 </body>
