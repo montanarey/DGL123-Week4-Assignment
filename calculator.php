@@ -37,7 +37,7 @@
         $secondNum = $_POST['secondNum'];
     
         // Error handling for non-numeric values
-        if (is_set($firstNum) && is_set($secondNum)) {
+        if (is_numeric($firstNum) && is_numeric($secondNum)) {
             
             // Calculate the sum of the first and second number
             $sum = $firstNum + $secondNum;
