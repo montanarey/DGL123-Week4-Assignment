@@ -24,5 +24,21 @@
         <input type="submit" name="submit" value="Calculate">
     </form>
 
+    
+    <?php // Script to handle user data and print calculation result
+    print "<h3>Result:</h3>"
+
+    // Recieve data from user and store in variables
+    $firstNum = $_POST['firstNum'];
+    $secondNum = $_POST['secondNum'];
+    
+    // Calculates the sum of the first and second number
+    $sum = $firstNum + $secondNum;
+
+    // Prints the sum
+    print"<p>$firstNum + $secondNum = $sum</p>";
+
+    ?>
+
 </body>
 </html>
