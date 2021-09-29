@@ -24,7 +24,6 @@
         <input type="submit" name="submit" value="Calculate">
     </form>
 
-
     <?php 
     // Only proceed with script below if the form has been filled in
     if (isset($_POST['firstNum']) && isset($_POST['secondNum'])) {
@@ -32,17 +31,15 @@
         // Print header
         print "<h3>Result:</h3>";
 
-        // Recieve data from user and store in variables
+        // Recieve and store user data
         $firstNum = $_POST['firstNum'];
         $secondNum = $_POST['secondNum'];
     
         // Error handling for non-numeric values
         if (is_numeric($firstNum) && is_numeric($secondNum)) {
             
-            // Calculate the sum of the first and second number
+            // Calculate  and print the sum
             $sum = $firstNum + $secondNum;
-            
-            // Print the sum
             print "<p>$firstNum + $secondNum = $sum</p>";
         } else {
         print "Incorrect input. Please enter valid numbers and try again.";
