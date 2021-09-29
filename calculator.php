@@ -24,19 +24,26 @@
         <input type="submit" name="submit" value="Calculate">
     </form>
 
-    
+
     <?php // Script to handle user data and print calculation result
-    print "<h3>Result:</h3>"
+    print "<h3>Result:</h3>";
 
     // Recieve data from user and store in variables
-    $firstNum = $_POST['firstNum'];
-    $secondNum = $_POST['secondNum'];
+    //$firstNum = $_POST['firstNum'];
+    //$secondNum = $_POST['secondNum'];
     
-    // Calculates the sum of the first and second number
-    $sum = $firstNum + $secondNum;
-
-    // Prints the sum
-    print"<p>$firstNum + $secondNum = $sum</p>";
+    // If both inputs are numeric
+    if (isset($_POST['firstNum']) && isset($_POST['secondNum'])) {
+        // Recieve data from user and store in variables
+        $firstNum = $_POST['firstNum'];
+        $secondNum = $_POST['secondNum'];
+        // Calculate the sum of the first and second number
+        $sum = $firstNum + $secondNum;
+        // Print the sum
+        print "<p>$firstNum + $secondNum = $sum</p>";
+    } else {
+        print "Incorrect input. Please enter valid numbers and try again.";
+    }
 
     ?>
 
