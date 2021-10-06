@@ -27,22 +27,19 @@
     <?php 
     // Only proceed with script below if the form has been filled in
     if (isset($_POST['firstNum']) && isset($_POST['secondNum'])) {
-
-        // Print header
-        print "<h3>Result:</h3>";
+        print "<h3>Result:</h3>"; // Print header
 
         // Recieve and store user data
         $firstNum = $_POST['firstNum'];
         $secondNum = $_POST['secondNum'];
     
-        // Error handling for non-numeric values
+        // If numeric values, add and print
         if (is_numeric($firstNum) && is_numeric($secondNum)) {
-            
-            // Calculate  and print the sum
             $sum = $firstNum + $secondNum;
             print "<p>$firstNum + $secondNum = $sum</p>";
         } else {
-        print "Incorrect input. Please enter valid numbers and try again.";
+            // If not a numeric value, output error message
+            print "Incorrect input. Please enter valid numbers and try again.";
         }
     }
     ?>
